@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('news', function (Blueprint $table) {
-            $table->n_id();
+            $table->id();
             $table->timestamp('n_date');
             $table->string('n_topic');
             $table->string('n_title');
