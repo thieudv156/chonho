@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('username');
             $table->string('password');
+            $table->string('email');
             $table->tinyInteger('role');
             $table->unsignedBigInteger('cust_id');
             $table->foreign('cust_id')->references('id')->on('customers');
