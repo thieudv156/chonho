@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('brand_description');
             $table->string('brand_logo');
             $table->string('brand_status');
-            
             $table->timestamps();
         });
     }
