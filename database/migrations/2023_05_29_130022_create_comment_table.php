@@ -19,8 +19,8 @@ return new class extends Migration
             $table->integer('cment_point');
             $table->string('cment_content');
             $table->tinyInteger('cment_status');
-            $table->integer('product_id');
-            $table->integer('cust_id');
+            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('cust_id');
             $table->timestamp('cment_date');
             $table->string('user_cment');
             $table->string('product_cment');

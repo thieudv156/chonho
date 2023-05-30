@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('fb_date');
             $table->string('fb_content');
             $table->string('fb_status');
-            $table->integer('cust_id');
+            // $table->integer('cust_id');
+            $table->unsignedBigInteger('cust_id');
             $table->foreign('cust_id')->references('id')->on('customers');
             $table->timestamps();
         });

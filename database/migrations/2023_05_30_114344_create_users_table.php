@@ -13,14 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('news', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->timestamps('n_date');
-            $table->string('n_topic');
-            $table->string('n_title');
-            $table->string('n_content');
-            $table->string('n_image');
-            $table->string('n_intro');
+            $table->string('username');
+            $table->string('password');
+            $table->tinyInteger('role');
+            $table->unsignedBigInteger('cust_id');
+            $table->foreign('cust_id')->references('id')->on('customers');
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news');
+        Schema::dropIfExists('users');
     }
 };

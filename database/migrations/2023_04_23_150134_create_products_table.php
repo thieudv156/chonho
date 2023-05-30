@@ -22,8 +22,9 @@ return new class extends Migration
             $table->timestamp('product_date');
             $table->integer('product_quantity');
             $table->text('product_status');
-            $table->integer('brand_id');
-            $table->
+            $table->unsignedBigInteger('brand_id');
+            $table->foreign('brand_id')->references('id')->on('brand');
+            // $table->foreign('brand_id')->references('id')->on('brand');
             $table->integer('productType_id');
             $table->string('product_image');
             

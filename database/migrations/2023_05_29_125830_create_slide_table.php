@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('slide', function (Blueprint $table) {
             $table->id();
             $table->string('image');
-            $table->int('product_id');
+            $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
             $table->timestamps();
         });
