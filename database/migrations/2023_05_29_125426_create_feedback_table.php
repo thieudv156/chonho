@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('brand', function (Blueprint $table) {
+        Schema::create('feedback', function (Blueprint $table) {
             $table->id();
-            $table->string('brand_name');
-            $table->string('brand_email');
-            $table->string('brand_description');
-            $table->string('brand_logo');
-            $table->string('brand_status');
-            
+            $table->string('fb_title');
+            $table->string('fb_date');
+            $table->string('fb_content');
+            $table->string('fb_status');
+            $table->integer('cust_id');
+            $table->foreign('cust_id')->references('id')->on('customers');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('brand');
+        Schema::dropIfExists('feedback');
     }
 };
