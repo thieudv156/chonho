@@ -13,6 +13,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\UnitController;
 use App\Http\Controllers\ProductController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -64,11 +65,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::get('/profile',[ProfileController::class, 'index'])->name('profile');
     Route::get('/error',[ErrorController::class, 'index'])->name('error');
-    
-    
-
-
 });
+
 
 //đường dẫn vào trang admin
 Route::get('Admin/user/manage', [UserController::class, 'manage'])->name('managePage');
@@ -79,3 +77,14 @@ Route::prefix('comment')->group(function () {
     // Route::get('/manage-comment',[CommentController::class, 'getListComment'])->name('manage-comment');
     Route::get('/listComment', [CommentController::class, 'getListComment'])->name('listComment');
 });
+
+
+//Category Back-end
+// Route::prefix('category')->group(function () {
+    
+// });
+
+Route::get('/Admin/category/index',[CategoryController::class, 'index']);
+
+
+

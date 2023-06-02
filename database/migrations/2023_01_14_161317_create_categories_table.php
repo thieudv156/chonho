@@ -19,6 +19,8 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->text('image')->nullable();
             $table->tinyInteger('status');
+            $table->unsignedBigInteger('subcategories_id');
+            $table->foreign('subcategories_id')->references('id')->on('sub_categories');
             $table->timestamps();
         });
     }
