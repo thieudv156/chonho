@@ -8,6 +8,7 @@ use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ErrorController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UnitController;
 use App\Http\Controllers\ProductController;
@@ -67,4 +68,14 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     
 
 
+});
+
+//đường dẫn vào trang admin
+Route::get('Admin/user/manage', [UserController::class, 'manage'])->name('managePage');
+
+//Admin comment
+Route::prefix('comment')->group(function () {
+    
+    // Route::get('/manage-comment',[CommentController::class, 'getListComment'])->name('manage-comment');
+    Route::get('/listComment', [CommentController::class, 'getListComment'])->name('listComment');
 });
