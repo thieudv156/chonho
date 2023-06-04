@@ -87,4 +87,3 @@ Route::prefix('comment')->group(function () {
 Route::get('/Admin/category/index',[CategoryController::class, 'index']);
 
 
-
